@@ -10,9 +10,27 @@
 
 class Author {
   constructor(name, email, gender){
-    this.name = name;
-    this.email = email;
-    this.gender = gender;
+    this._name = name;
+    this._email = email;
+    this._gender = gender;
+  }
+  get name(){
+    return this._name;
+  }
+  set name(value) {
+    this._name = name;
+  }
+  get email(){
+    return this._email;
+  }
+  set email(value) {
+    this._email = email;
+  }
+  get gender(){
+    return this._gender;
+  }
+  set gender(value) {
+    this._gender = gender;
   }
   toString(){
     return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}.`
@@ -21,14 +39,31 @@ class Author {
 class Book extends Author {
   constructor(name, email, gender, title, price, quantity){
     super(...arguments);
-    this.title = title;
-    this.author = this.name;
-    this.price = price;
-    this.quantity = quantity;
+    this._title = title;
+    this._author = this._name;
+    this._price = price;
+    this._quantity = quantity;
+  }
+  get title(){
+    return this._title;
+  }
+  set title(value) {
+    this._title = title;
+  }
+  get price(){
+    return this._price;
+  }
+  set price(value) {
+    this._price = price;
+  }
+  get quantity(){
+    return this._quantity;
+  }
+  set quantity(value) {
+    this._quantity = quantity;
   }
   toString(){
-      return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}, title: ${this.title},
-      author: ${this.name}, price: ${this.price}, quantity: ${this.quantity}.`
+      return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}, title: ${this.title}, author: ${this.name}, price: ${this.price}, quantity: ${this.quantity}.`
     }
   getProfit () {
     return this.price * this.quantity;
