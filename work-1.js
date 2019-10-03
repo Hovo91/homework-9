@@ -18,19 +18,19 @@ class Author {
     return this._name;
   }
   set name(value) {
-    this._name = name;
+    this._name = value;
   }
   get email(){
     return this._email;
   }
   set email(value) {
-    this._email = email;
+    this._email = value;
   }
   get gender(){
     return this._gender;
   }
   set gender(value) {
-    this._gender = gender;
+    this._gender = value;
   }
   toString(){
     return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}.`
@@ -48,19 +48,19 @@ class Book extends Author {
     return this._title;
   }
   set title(value) {
-    this._title = title;
+    this._title = value;
   }
   get price(){
     return this._price;
   }
   set price(value) {
-    this._price = price;
+    this._price = value;
   }
   get quantity(){
     return this._quantity;
   }
   set quantity(value) {
-    this._quantity = quantity;
+    this._quantity = value;
   }
   toString(){
       return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}, title: ${this.title}, author: ${this.name}, price: ${this.price}, quantity: ${this.quantity}.`
