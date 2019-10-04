@@ -36,13 +36,20 @@ class Author {
     return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}.`
   }
 }
-class Book extends Author {
-  constructor(name, email, gender, title, price, quantity){
+class Book {
+  constructor(name, email, gender, title, author, price, quantity){
     super(...arguments);
     this._title = title;
-    this._author = this._name;
+    this._author = author;
     this._price = price;
     this._quantity = quantity;
+  }
+  get author(){
+    return this._author;
+  }
+  set author(value) {
+    value = new Author();
+    this._author = value;
   }
   get title(){
     return this._title;
@@ -63,17 +70,9 @@ class Book extends Author {
     this._quantity = value;
   }
   toString(){
-      return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}, title: ${this.title}, author: ${this.name}, price: ${this.price}, quantity: ${this.quantity}.`
+      return `name: ${this.name}, email: ${this.email}, gender: ${this.gender}, title: ${this.title}, author: ${this.author}, price: ${this.price}, quantity: ${this.quantity}.`
     }
   getProfit () {
     return this.price * this.quantity;
   }
 }
-let author = new Author ('Hovo', 'asd@gmail.com', 'male');
-let book1 = new Book('Hovo', 'asd@gmail.com', 'male', 'Good book', 15, 65);
-
-console.log(book1);
-console.log(book1.getProfit());
-console.log(book1.toString());
-console.log(author);
-console.log(author.toString());
