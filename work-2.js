@@ -31,9 +31,6 @@ class Account {
   get id(){
     return this._id;
   }
-  set id() {
-    
-  }
   credit(amount) {
     this.balance = amount + this.balance
     return this.balance;
